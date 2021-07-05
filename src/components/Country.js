@@ -5,7 +5,7 @@ const Country = ({thumbnail, name, population, region, capital}) => {
   return (
     <div>
       <Link to={`/${name}`}>
-        <img src={thumbnail} alt={`${name}-img`} />
+        <img style={{width: '100px'}} src={thumbnail} alt={`${name}-img`} />
       </Link>
       <h2>{name}</h2>
       <div>Population: {population}</div>
