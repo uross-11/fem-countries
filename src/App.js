@@ -18,7 +18,7 @@ const App = () => {
       <Navbar /> 
       <Switch>
         <Route exact path='/' component={Home} />
-        <Route path='/country/:id' component={SingleCountry} />
+        <Route path='/:id' component={SingleCountry} />
         <Route path='*' component={ErrorPage} />
       </Switch>
     </Router>
