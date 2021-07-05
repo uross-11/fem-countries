@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+
+import Loading from '../components/Loading';
+
 const url = 'https://restcountries.eu/rest/v2/name/';
 
 const SingleCountry = () => {
@@ -36,6 +39,7 @@ const SingleCountry = () => {
   }, [id]); 
 
   if (loading) {
+    return <Loading />
   }
   if (!country) {
     return <h2 className="section-title">no cocktail to display</h2>

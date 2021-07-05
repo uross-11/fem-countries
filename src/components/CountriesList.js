@@ -2,12 +2,13 @@ import React from 'react';
 import { useGlobalContext } from '../context';
 
 import Country from './Country';
+import Loading from './Loading';
 
 const CountriesList = () => {
   const {countries, loading} = useGlobalContext();
 
   if (loading) {
-
+    return <Loading />
   }
   if (countries.length < 1) {
     return <h2>
