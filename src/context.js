@@ -1,12 +1,23 @@
-import React, { useState, useContext, useEffect, useCallback } from 'react';
+import React, { useState, useContext, useEffect, useCallback, useReducer } from 'react';
+import reducer from './reducer';
 
 const url = 'https://restcountries.eu/rest/v2/name/';
 const AppContext = React.createContext();
+
+const initialState = {
+  darkMode: true,
+}
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('c');
   const [countries, setCountries] = useState([]);
+
+  const [state, dispatch] = useReducer(reducer, initialState)
+
+  const setMode = () => {
+    dispatch({type: 'SET_MODE'});
+  }
 
   const fetchCountries = useCallback(async () => {
     setLoading(true);
@@ -47,9 +58,11 @@ const AppProvider = ({ children }) => {
   }, [searchTerm, fetchCountries]);
 
   return <AppContext.Provider value={{
+    ...state,
     loading,
     countries,
-    setSearchTerm
+    setSearchTerm,
+    setMode,
   }}>
     {children}
   </AppContext.Provider>
