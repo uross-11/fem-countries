@@ -13,13 +13,13 @@ const AppProvider = ({ children }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [countries, setCountries] = useState([]);
   const [region, setRegion] = useState('');
+  const [codes, setCodes] = useState({});
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
   const setMode = () => {
     dispatch({type: 'SET_MODE'});
   }
-
 
   const fetchCountries = useCallback(async () => {
     setLoading(true);
@@ -37,7 +37,21 @@ const AppProvider = ({ children }) => {
       const data = await response.json();
 
       if (data) {
-        const newCountries = data.map((item) => {
+        if(!searchTerm && !region) {
+          const a3c = data.map(item => {
+            const {
+              name,
+              alpha3Code
+            } = item;
+            return {
+              name: name,
+              code: alpha3Code
+            }
+          })
+          setCodes(a3c)
+        }
+
+        const newCountries = data.map(item => {
           const {
             flag,
             name,
@@ -75,6 +89,7 @@ const AppProvider = ({ children }) => {
     setSearchTerm,
     setMode,
     setRegion,
+    codes,
   }}>
     {children}
   </AppContext.Provider>

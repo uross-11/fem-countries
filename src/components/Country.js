@@ -8,7 +8,7 @@ const Country = ({thumbnail, name, population, region, capital}) => {
         <img style={{width: '100px'}} src={thumbnail} alt={`${name}-img`} />
       </Link>
       <h2>{name}</h2>
-      <div>Population: {population}</div>
+      <div>Population: {population.toLocaleString()}</div>
       <div>Region: {region}</div>
       <div>Capital: {capital}</div>
     </div>
