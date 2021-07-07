@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback, useReducer } from 'react';
 import reducer from './reducer';
 
-const url = 'https://restcountries.eu/rest/v2/name/';
+const url = 'https://restcountries.eu/rest/v2/';
 const AppContext = React.createContext();
 
 const initialState = {
@@ -10,8 +10,9 @@ const initialState = {
 
 const AppProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('c');
+  const [searchTerm, setSearchTerm] = useState('');
   const [countries, setCountries] = useState([]);
+  const [region, setRegion] = useState('');
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
@@ -19,10 +20,20 @@ const AppProvider = ({ children }) => {
     dispatch({type: 'SET_MODE'});
   }
 
+
   const fetchCountries = useCallback(async () => {
     setLoading(true);
     try {
-      const response = await fetch(`${url}${searchTerm}`);
+      var urlSearch = url;
+
+      if (searchTerm) {
+        urlSearch = `${url}name/${searchTerm}`;
+      }
+      if (region) {
+        urlSearch = `${url}region/${region}`;
+      }
+
+      const response = await fetch(urlSearch);
       const data = await response.json();
 
       if (data) {
@@ -51,7 +62,7 @@ const AppProvider = ({ children }) => {
       console.log(err);
       setLoading(false);
     }
-  }, [searchTerm]);
+  }, [searchTerm, region]);
 
   useEffect(() => {
     fetchCountries();
@@ -63,6 +74,7 @@ const AppProvider = ({ children }) => {
     countries,
     setSearchTerm,
     setMode,
+    setRegion,
   }}>
     {children}
   </AppContext.Provider>
