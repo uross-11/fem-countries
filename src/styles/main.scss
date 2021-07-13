@@ -12,9 +12,16 @@
 @import 'base/typography';
 
 // Themes
+@import 'themes/dark';
+@import 'themes/light';
 
 // Pages
 
 // Layout
 
 // Components
+@import 'components/Navbar';
+@import 'components/SearchForm';
+@import 'components/Country';
+@import 'components/Loading';
+@import 'components/CountriesList';

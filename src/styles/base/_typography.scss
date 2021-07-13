@@ -1,0 +1,27 @@
+body,
+input,
+select,
+button,
+link {
+  font-family: 'Nunito Sans', sans-serif;
+  color: $white;
+}
+
+.navbar {
+  font-size: $homepage-font;
+  button {
+    font-size: $homepage-font;
+  }
+}
+
+.form {
+  font-size: $homepage-font;
+  input,
+  select {
+    font-size: $homepage-font;
+  }
+}
+
+.country {
+  font-size: $homepage-font;
+}

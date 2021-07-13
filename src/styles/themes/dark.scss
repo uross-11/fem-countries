@@ -1,0 +1,15 @@
+.dark {
+  background-color: $very-dark-blue-1;
+
+  .navbar,
+  .country,
+  input,
+  select {
+    background-color: $dark-blue;
+  }
+
+  input,
+  select {
+    color: $white;
+  }
+}

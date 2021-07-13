@@ -1,0 +1,32 @@
+.form {
+  margin-top: 24px;
+  margin-bottom: 30px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 19px;
+    left: 25px;
+  }
+
+  &__input,
+  &__select {
+    display: block;
+    padding: 18px 50px;
+    border-radius: 5px;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__select {
+    padding: 18px 24px;
+    margin-top: 40px;
+    width: 200px;
+    appearance: none;
+  }
+}

@@ -3,14 +3,16 @@ import { Link } from 'react-router-dom';
 
 const Country = ({thumbnail, name, population, region, capital}) => {
   return (
-    <div>
-      <Link to={`/${name}`}>
-        <img style={{width: '100px'}} src={thumbnail} alt={`${name}-img`} />
+    <div className='country'>
+      <Link className='country__img' to={`/${name}`}>
+        <img src={thumbnail} alt={`${name}-img`} />
       </Link>
-      <h2>{name}</h2>
-      <div>Population: {population.toLocaleString()}</div>
-      <div>Region: {region}</div>
-      <div>Capital: {capital}</div>
+      <div className="country__description container-c">
+        <h2 className='country__description__name'>{name}</h2>
+        <div className='country__description__text'>Population: {population.toLocaleString()}</div>
+        <div className='country__description__text'>Region: {region}</div>
+        <div className='country__description__text'>Capital: {capital}</div>
+      </div>
     </div>
   );
 }

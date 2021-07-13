@@ -1,5 +1,6 @@
 // APIs 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { useGlobalContext } from './context';
 
 // Pages
 import Home from './pages/Home';
@@ -13,15 +14,27 @@ import Navbar from './components/Navbar';
 import './styles/main.scss';
 
 const App = () => {
+  const {darkMode} = useGlobalContext();
+
+  // Fix to css
+  const body = document.querySelector('body');
+  if (darkMode) {
+    body.classList.add('dark');
+    body.classList.remove('light');
+  } else {
+    body.classList.add('light');
+    body.classList.remove('dark');
+  }
+
   return (
-    <Router>
-      <Navbar /> 
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/:id' component={SingleCountry} />
-        <Route path='*' component={ErrorPage} />
-      </Switch>
-    </Router>
+      <Router>
+        <Navbar /> 
+        <Switch>
+          <Route exact path='/' component={Home} />
+          <Route path='/:id' component={SingleCountry} />
+          <Route path='*' component={ErrorPage} />
+        </Switch>
+      </Router>
   );
 }
 
