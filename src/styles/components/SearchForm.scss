@@ -6,20 +6,28 @@
     position: relative;
   }
 
-  &__icon {
+  &__searchicon {
     position: absolute;
     top: 19px;
-    left: 25px;
+    left: 35px;
+    transform: scale(1.3);
+  }
+
+  &__arrowicon {
+    position: absolute;
+    top: 20px;
+    left: 170px;
+    transform: scale(1.5);
   }
 
   &__input,
   &__select {
     display: block;
-    padding: 18px 50px;
     border-radius: 5px;
   }
 
   &__input {
+    padding: 18px 80px;
     width: 100%;
   }
 
