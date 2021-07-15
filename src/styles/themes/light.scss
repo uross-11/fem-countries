@@ -1,3 +1,28 @@
 .light {
+  background-color: $very-light-gray;
 
+  .navbar,
+  .country,
+  input,
+  select {
+    background-color: $white;
+  }
+
+  input,
+  select,
+  a,
+  a:visited {
+    color: $very-dark-blue-2;
+  }
+
+  .singlecountry {
+
+    &__back {
+      background-color: $white;
+    }
+
+    &__borders__button {
+      background-color: $white;
+    }
+  }
 }

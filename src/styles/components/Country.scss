@@ -17,6 +17,11 @@
 
     &__text {
       margin-bottom: 10px;
+
+      &__b {
+        display: inline;
+        margin-right: 5px;
+      }
     }
   }
 }

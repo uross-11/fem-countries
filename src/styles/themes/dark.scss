@@ -1,5 +1,6 @@
 .dark {
   background-color: $very-dark-blue-1;
+  color: $white;
 
   .navbar,
   .country,
@@ -9,10 +10,8 @@
   }
 
   input,
-  select {
-    color: $white;
-  }
-
+  select,
+  button,
   a,
   a:visited {
     color: $white;
@@ -28,5 +27,4 @@
       background-color: $dark-blue;
     }
   }
-
 }

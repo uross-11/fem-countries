@@ -4,7 +4,6 @@ select,
 button,
 link {
   font-family: 'Nunito Sans', sans-serif;
-  color: $white;
 }
 
 .navbar {
@@ -25,6 +24,10 @@ link {
 
 .country {
   font-size: $homepage-font;
+
+  &__description__text__b {
+    font-weight: 600;
+  }
 }
 
 .singlecountry {
