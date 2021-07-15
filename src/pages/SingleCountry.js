@@ -98,7 +98,7 @@ const SingleCountry = () => {
 
   return (
     <div className='singlecountry container-sc'>
-      <button className='singlecountry__back'>
+      <button className='singlecountry__back bs'>
         <Link className='singlecountry__back__link' to='/'>
           <BsArrowLeft className='singlecountry__back__link__arrow' />
           Back

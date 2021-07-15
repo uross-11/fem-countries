@@ -26,7 +26,7 @@ const SearchForm = () => {
 
   return (
     <form className='form container-h' onSubmit={handleSubmit} action=''>
-      <div className="form__container">
+      <div className="form__container bs">
         <AiOutlineSearch className='form__searchicon' />
         <input
           className='form__input'
@@ -41,7 +41,7 @@ const SearchForm = () => {
       </div>
       <div className="form__container">
         <select
-          className='form__select'
+          className='form__select bs'
           onChange={selectRegion}
           ref={filterRegion}
           name="region"

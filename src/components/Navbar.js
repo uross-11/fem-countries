@@ -5,7 +5,7 @@ import {RiMoonFill, RiSunFill} from 'react-icons/ri'
 const Navbar = () => {
   const { setMode, darkMode } = useGlobalContext();
   return (
-    <nav className='navbar'>
+    <nav className='navbar bs'>
       <span className='navbar__title'>
         Where in the world?
       </span>
