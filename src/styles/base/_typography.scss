@@ -26,3 +26,15 @@ link {
 .country {
   font-size: $homepage-font;
 }
+
+.singlecountry {
+
+  &__text__b {
+    font-weight: 600;
+  }
+
+  &__borders__title {
+    font-weight: 600;
+    font-size: $detailpage-font;
+  }
+}

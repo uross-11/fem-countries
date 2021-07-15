@@ -12,4 +12,21 @@
   select {
     color: $white;
   }
+
+  a,
+  a:visited {
+    color: $white;
+  }
+
+  .singlecountry {
+
+    &__back {
+      background-color: $dark-blue;
+    }
+
+    &__borders__button {
+      background-color: $dark-blue;
+    }
+  }
+
 }

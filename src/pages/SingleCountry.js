@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useGlobalContext } from '../context';
 import { Link } from 'react-router-dom';
+import {BsArrowLeft} from 'react-icons/bs';
 
 import Loading from '../components/Loading';
 
@@ -21,7 +22,6 @@ const SingleCountry = () => {
       try {
         const response = await fetch(`${url}${id}`);
         const data = await response.json();
-        console.log(data[0])
         if (data) {
           const {
             flag,
@@ -97,33 +97,81 @@ const SingleCountry = () => {
   })
 
   return (
-    <div>
-      <Link to='/'>back</Link>
-      <img style={{width: '100px'}} src={flag} alt={name} />
-      <h2>{name}</h2>
-      <div>Native name: {nativeName}</div> 
-      <div>Population: {population.toLocaleString()}</div>
-      <div>Region: {region}</div>
-      <div>Sub Region: {subregion}</div>
-      <div>Capital: {capital}</div>
+    <div className='singlecountry container-sc'>
+      <button className='singlecountry__back'>
+        <Link className='singlecountry__back__link' to='/'>
+          <BsArrowLeft className='singlecountry__back__link__arrow' />
+          Back
+        </Link>
+      </button>
 
-      <div>Top Level Domain: {topLevelDomain[0]}</div>
-      <div>Currencies: {currencies.map((item, index) => {
-        if (index === currencies.length - 1) {
-          return <span>{item.name}</span>
-        }
-        return <span>{item.name}, </span>
-      })}</div>
-      <div>Languages: {languages.map((item, index) => {
-        if (index === languages.length - 1) {
-          return <span>{item.name}</span>
-        }
-        return <span>{item.name}, </span>
-      })}</div>
-      <div>Border Countries:</div>
-      <div>{borderCountries.map(item => {
-        return <Link to={`/${item}`}>{item}</Link>
-      })}</div>
+      <div className="singlecountry__img">
+        <img src={flag} alt={name} />
+      </div>
+
+      <h2 className='singlecountry__name'>{name}</h2>
+
+      <div className="singlecountry__primary">
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Native name:</div>
+          {nativeName}
+        </div> 
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Population:</div>
+          {population.toLocaleString()}
+        </div>
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Region:</div>
+          {region}
+        </div>
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Sub Region:</div>
+          {subregion}
+        </div>
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Capital:</div>
+          {capital}
+        </div>
+      </div>
+
+      <div className="singlecountry__secondary">
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Top Level Domain:</div>
+          {topLevelDomain[0]}
+        </div>
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Currencies:</div>
+          {currencies.map((item, index) => {
+            if (index === currencies.length - 1) {
+              return <span>{item.name}</span>
+            }
+            return <span>{item.name}, </span>
+          })}
+        </div>
+        <div className='singlecountry__text'>
+          <div className="singlecountry__text__b">Languages:</div>
+          {languages.map((item, index) => {
+            if (index === languages.length - 1) {
+              return <span>{item.name}</span>
+            }
+            return <span>{item.name}, </span>
+          })}
+        </div>
+      </div>
+
+      <div className="singlecountry__borders">
+        <div className='singlecountry__borders__title'>Border Countries:</div>
+        <div>
+          {borderCountries.map(item => {
+            return (
+              <button className='singlecountry__borders__button'>
+                <Link className='singlecountry__borders__button__link' to={`/${item}`}>{item}</Link>
+              </button>
+            );
+          })}
+        </div>
+      </div>
+
     </div>
   );
 }

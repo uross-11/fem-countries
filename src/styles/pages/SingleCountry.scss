@@ -1,0 +1,67 @@
+.singlecountry {
+
+  &__name {
+    margin-top: 46px;
+    margin-bottom: 34px;
+  }
+
+  &__text {
+    margin-bottom: 22px;
+
+    &__b {
+      display: inline;
+      margin-right: 6px;
+    }
+  }
+
+  &__secondary {
+    margin-top: 50px;
+  }
+
+  &__borders {
+    margin-top: 46px;
+
+    &__title {
+      margin-bottom: 22px;
+    }
+
+    &__button {
+      border: 0;
+      padding: 0;
+      border-radius: 5px;
+        margin: 10px;
+
+      &__link {
+        display: block;
+        padding: 10px 30px;
+      }
+    }
+  }
+
+  &__back {
+    display: block;
+    border: 0;
+    margin: 40px 0 64px 0; 
+    padding: 0;
+    border-radius: 5px;
+
+    &__link {
+      display: block;
+      position: relative;
+      padding: 10px 24px 10px 48px;
+
+      &__arrow {
+        position: absolute;
+        left: 22px;
+        transform: scale(1.7);
+        top: 11px;
+      }
+    }
+  }
+
+  &__img {
+    img {
+      width: 100%;
+    }
+  }
+}

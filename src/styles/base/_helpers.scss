@@ -1,13 +1,16 @@
 .container {
 
+  // Header container
   &-h {
     margin: 0 16px;
   }
 
+  // Single Country container
   &-sc {
-    margin: 0 26px;
+    margin: 0 28px;
   }
 
+  // Countries List container
   &-cl {
     margin: 0 54px;
   }
