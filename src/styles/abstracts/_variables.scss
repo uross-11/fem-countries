@@ -9,3 +9,10 @@ $white: hsl(0, 0%, 100%);
 // Font sizes
 $homepage-font: 0.875rem;
 $detailpage-font: 1rem;
+
+// MQ breakpoints 640px, 1024px, 1400px
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em"
+);

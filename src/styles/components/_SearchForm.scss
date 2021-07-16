@@ -2,6 +2,14 @@
   margin-top: 24px;
   margin-bottom: 30px;
 
+  @include breakpoint-up (large) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+    margin-bottom: 48px;
+  }
+
   &__container {
     position: relative;
   }
@@ -29,6 +37,10 @@
   &__input {
     padding: 18px 80px;
     width: 100%;
+
+    @include breakpoint-up (large) {
+      width: 480px;
+    }
   }
 
   &__select {
@@ -36,5 +48,9 @@
     margin-top: 40px;
     width: 200px;
     appearance: none;
+
+    @include breakpoint-up (large) {
+      margin: 0;
+    }
   }
 }

@@ -13,9 +13,17 @@
   // Countries List container
   &-cl {
     margin: 0 54px;
+    
   }
 
   &-c {
     margin: 0 24px;
+  }
+
+  @include breakpoint-up (medium) {
+    &-cl,
+    &-h {
+      margin: 0 75px;
+    }
   }
 }

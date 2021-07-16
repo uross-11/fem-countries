@@ -2,6 +2,11 @@
   margin-bottom: 40px;
   border-radius: 5px;
   overflow: hidden;
+  max-width: 265px;
+
+  @include breakpoint-up (medium) {
+    //margin: 0 75px 40px 0;
+  }
 
   img {
     width: 100%;

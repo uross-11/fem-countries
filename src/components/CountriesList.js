@@ -18,11 +18,9 @@ const CountriesList = () => {
 
   return (
     <div className='countrieslist container-cl'>
-      <div>
-        {countries.map((item) => {
-          return <Country key={item.name} {...item} />
-        })}
-      </div> 
+      {countries.map((item) => {
+        return <Country key={item.name} {...item} />
+      })}
     </div>
   );
 }
