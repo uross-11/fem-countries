@@ -1,12 +1,40 @@
 .singlecountry {
 
+  &__info {
+
+    @include breakpoint-up (large) {
+      margin-left: 145px;
+      display: grid;
+      grid-template-areas:
+        'a a'
+        'b c'
+        'd d';
+    }
+  }
+
+  &__content {
+
+    @include breakpoint-up (large) {
+      display: flex;
+    }
+  }
+
   &__name {
     margin-top: 46px;
     margin-bottom: 34px;
+    grid-area: a;
+
+    @include breakpoint-up (large) {
+      margin-bottom: 40px;
+    }
   }
 
   &__text {
     margin-bottom: 22px;
+
+    @include breakpoint-up (large) {
+      margin-bottom: 18px;
+    }
 
     &__b {
       display: inline;
@@ -14,15 +42,37 @@
     }
   }
 
+  &__primary {
+    grid-area: b;
+  }
+
   &__secondary {
     margin-top: 50px;
+    grid-area: c;
+
+    @include breakpoint-up (large) {
+      margin-top: 0;
+    }
   }
 
   &__borders {
     margin-top: 46px;
+    padding-bottom: 60px;
+    grid-area: d;
+
+    @include breakpoint-up (large) {
+      &__title,
+      &__buttons {
+        display: inline;
+      }
+    }
 
     &__title {
       margin-bottom: 22px;
+
+      @include breakpoint-up (large) {
+        margin-right: 15px;
+      }
     }
 
     &__button {
@@ -45,6 +95,11 @@
     padding: 0;
     border-radius: 5px;
 
+    @include breakpoint-up (large) {
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+
     &__link {
       display: block;
       position: relative;
@@ -62,6 +117,10 @@
   &__img {
     img {
       width: 100%;
+
+      @include breakpoint-up (xlarge) {
+        width: 560px;
+      }
     }
   }
 }

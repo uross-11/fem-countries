@@ -105,73 +105,78 @@ const SingleCountry = () => {
         </Link>
       </button>
 
-      <div className="singlecountry__img">
-        <img src={flag} alt={name} />
+      <div className="singlecountry__content">
+
+        <div className="singlecountry__img">
+          <img src={flag} alt={name} />
+        </div>
+
+        <div className="singlecountry__info">
+
+          <h2 className='singlecountry__name'>{name}</h2>
+          <div className="singlecountry__primary">
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Native name:</div>
+              {nativeName}
+            </div> 
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Population:</div>
+              {population.toLocaleString()}
+            </div>
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Region:</div>
+              {region}
+            </div>
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Sub Region:</div>
+              {subregion}
+            </div>
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Capital:</div>
+              {capital}
+            </div>
+          </div>
+
+          <div className="singlecountry__secondary">
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Top Level Domain:</div>
+              {topLevelDomain[0]}
+            </div>
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Currencies:</div>
+              {currencies.map((item, index) => {
+                if (index === currencies.length - 1) {
+                  return <span>{item.name}</span>
+                }
+                return <span>{item.name}, </span>
+              })}
+            </div>
+            <div className='singlecountry__text'>
+              <div className="singlecountry__text__b">Languages:</div>
+              {languages.map((item, index) => {
+                if (index === languages.length - 1) {
+                  return <span>{item.name}</span>
+                }
+                return <span>{item.name}, </span>
+              })}
+            </div>
+          </div>
+
+          <div className="singlecountry__borders">
+            <div className='singlecountry__borders__title'>Border Countries:</div>
+            <div className='singlecountry__borders__buttons'>
+              {borderCountries.map(item => {
+                return (
+                  <button className='singlecountry__borders__button'>
+                    <Link className='singlecountry__borders__button__link' to={`/${item}`}>{item}</Link>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+        </div>
       </div>
-
-      <h2 className='singlecountry__name'>{name}</h2>
-
-      <div className="singlecountry__primary">
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Native name:</div>
-          {nativeName}
-        </div> 
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Population:</div>
-          {population.toLocaleString()}
-        </div>
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Region:</div>
-          {region}
-        </div>
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Sub Region:</div>
-          {subregion}
-        </div>
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Capital:</div>
-          {capital}
-        </div>
-      </div>
-
-      <div className="singlecountry__secondary">
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Top Level Domain:</div>
-          {topLevelDomain[0]}
-        </div>
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Currencies:</div>
-          {currencies.map((item, index) => {
-            if (index === currencies.length - 1) {
-              return <span>{item.name}</span>
-            }
-            return <span>{item.name}, </span>
-          })}
-        </div>
-        <div className='singlecountry__text'>
-          <div className="singlecountry__text__b">Languages:</div>
-          {languages.map((item, index) => {
-            if (index === languages.length - 1) {
-              return <span>{item.name}</span>
-            }
-            return <span>{item.name}, </span>
-          })}
-        </div>
-      </div>
-
-      <div className="singlecountry__borders">
-        <div className='singlecountry__borders__title'>Border Countries:</div>
-        <div>
-          {borderCountries.map(item => {
-            return (
-              <button className='singlecountry__borders__button'>
-                <Link className='singlecountry__borders__button__link' to={`/${item}`}>{item}</Link>
-              </button>
-            );
-          })}
-        </div>
-      </div>
-
     </div>
   );
 }

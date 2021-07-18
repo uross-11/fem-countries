@@ -7,10 +7,8 @@ const SearchForm = () => {
   const {setSearchTerm, setRegion} = useGlobalContext();
   const searchValue = useRef('');
   const filterRegion = useRef('');
-  const region = document.getElementById('region');
 
   const searchCountry = () => {
-    region.selectedIndex = '0';
     setRegion(filterRegion.current.value = '');
     setSearchTerm(searchValue.current.value);
   }

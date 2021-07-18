@@ -22,7 +22,8 @@
 
   @include breakpoint-up (medium) {
     &-cl,
-    &-h {
+    &-h,
+    &-sc {
       margin: 0 75px;
     }
   }
