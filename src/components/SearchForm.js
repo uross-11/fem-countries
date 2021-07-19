@@ -38,6 +38,7 @@ const SearchForm = () => {
         />
       </div>
       <div className="form__container">
+        {/* Import react-select */}
         <select
           className='form__select bs'
           onChange={selectRegion}
@@ -45,7 +46,7 @@ const SearchForm = () => {
           name="region"
           id="region"
         >
-          <option value="" selected disabled hidden>
+          <option id="default" value="" selected disabled hidden>
             Filter by Region
           </option>
           <option value="africa">Africa</option>

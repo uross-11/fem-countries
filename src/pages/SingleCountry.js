@@ -85,16 +85,17 @@ const SingleCountry = () => {
   } = country;
 
   // Transform borders array from [FRA, ITA] to [France, Italy]
-  // Convert to for loop
   var borderCountries = [];
-  const c = Object.values(codes)
-  c.map(item => {
-    borders.map(border => {
-      if (item.code === border) {
-        borderCountries.push(item.name);
+  // Border codes
+  const c = Object.values(codes);
+
+  for (let i = 0; i < c.length; i++) {
+    for (let j = 0; j < borders.length; j++) {
+      if(c[i].code === borders[j]) {
+        borderCountries.push(c[i].name);
       }
-    })
-  })
+    }
+  }
 
   return (
     <div className='singlecountry container-sc'>
@@ -146,18 +147,18 @@ const SingleCountry = () => {
               <div className="singlecountry__text__b">Currencies:</div>
               {currencies.map((item, index) => {
                 if (index === currencies.length - 1) {
-                  return <span>{item.name}</span>
+                  return <span key={index}>{item.name}</span>
                 }
-                return <span>{item.name}, </span>
+                return <span key={index}>{item.name}, </span>
               })}
             </div>
             <div className='singlecountry__text'>
               <div className="singlecountry__text__b">Languages:</div>
               {languages.map((item, index) => {
                 if (index === languages.length - 1) {
-                  return <span>{item.name}</span>
+                  return <span key={index}>{item.name}</span>
                 }
-                return <span>{item.name}, </span>
+                return <span key={index}>{item.name}, </span>
               })}
             </div>
           </div>
@@ -165,9 +166,9 @@ const SingleCountry = () => {
           <div className="singlecountry__borders">
             <div className='singlecountry__borders__title'>Border Countries:</div>
             <div className='singlecountry__borders__buttons'>
-              {borderCountries.map(item => {
+              {borderCountries.map((item, index) => {
                 return (
-                  <button className='singlecountry__borders__button'>
+                  <button key={index} className='singlecountry__borders__button'>
                     <Link className='singlecountry__borders__button__link' to={`/${item}`}>{item}</Link>
                   </button>
                 );
