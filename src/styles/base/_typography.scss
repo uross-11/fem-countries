@@ -12,6 +12,10 @@ link {
   button {
     font-size: $homepage-font;
   }
+
+  @include breakpoint-up (large) {
+    font-size: $detailpage-font;  
+  }
 }
 
 .form {
