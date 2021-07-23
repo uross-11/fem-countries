@@ -39,11 +39,12 @@ const SearchForm = () => {
       </div>
       <div className="form__container">
         {/* Import react-select */}
+        <label htmlFor="region"></label>
         <select
           className='form__select bs'
           onChange={selectRegion}
           ref={filterRegion}
-          name="region_select"
+          name="region"
           id="region"
         >
           <option id="default" value="" selected disabled hidden>
