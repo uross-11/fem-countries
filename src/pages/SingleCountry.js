@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link , useParams } from 'react-router-dom';
 import { useGlobalContext } from '../context';
-import { Link } from 'react-router-dom';
-import {BsArrowLeft} from 'react-icons/bs';
+import { BsArrowLeft } from 'react-icons/bs';
 
 import Loading from '../components/Loading';
 
 const url = 'https://restcountries.eu/rest/v2/name/';
 
-const SingleCountry = () => {
+const SingleCountry = ({match}) => {
+
   const { id } = useParams();
+  const param = id.replace(/-/g, ' ');
 
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
 
   const {codes} = useGlobalContext();
-
+  
   useEffect(() => {
     setLoading(true);
     async function getCountry () {
       try {
-        const response = await fetch(`${url}${id}`);
+        const response = await fetch(`${url}${param}`);
         const data = await response.json();
         if (data) {
           const {

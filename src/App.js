@@ -16,7 +16,6 @@ import './styles/main.scss';
 const App = () => {
   const {darkMode} = useGlobalContext();
 
-  // Fix to css
   const body = document.querySelector('body');
   if (darkMode) {
     body.classList.add('dark');
@@ -28,7 +27,7 @@ const App = () => {
 
   return (
       <Router>
-        <Navbar /> 
+        <Navbar />
         <Switch>
           <Route exact path='/' component={Home} />
           <Route path='/:id' component={SingleCountry} />
