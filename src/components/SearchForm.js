@@ -43,7 +43,7 @@ const SearchForm = () => {
           className='form__select bs'
           onChange={selectRegion}
           ref={filterRegion}
-          name="region"
+          name="region_select"
           id="region"
         >
           <option id="default" value="" selected disabled hidden>
