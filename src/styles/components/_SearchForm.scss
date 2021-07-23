@@ -38,6 +38,10 @@
     padding: 18px 80px;
     width: 100%;
 
+    @include breakpoint-down (small) {
+      padding: 18px 75px;
+    }
+
     @include breakpoint-up (large) {
       width: 480px;
     }

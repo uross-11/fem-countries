@@ -2,26 +2,37 @@
   margin-bottom: 40px;
   border-radius: 5px;
   overflow: hidden;
-  max-width: 265px;
+  height: 338px;
+  width: 264px;
 
-  @include breakpoint-up (medium) {
-    //margin: 0 75px 40px 0;
+  @include breakpoint-down (small) {
+    width: unset;
+    height: unset;
+  }
+  
+  &__img {
+    display: block;
+    overflow: hidden;
+    height: 160px;
+    background-size: cover;
   }
 
   img {
+    height: 100%;
     width: 100%;
+    transform: scale(1.1);
   }
 
   &__description {
-      margin-top: 28px;
+      margin-top: 24px;
       padding-bottom: 40px;
 
     &__name {
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     &__text {
-      margin-bottom: 10px;
+      margin-bottom: 5px;
 
       &__b {
         display: inline;

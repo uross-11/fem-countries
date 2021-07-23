@@ -9,12 +9,25 @@ link {
 .navbar {
   font-size: $homepage-font;
   font-weight: 800;
-  button {
-    font-size: $homepage-font;
-  }
 
   @include breakpoint-up (large) {
     font-size: $detailpage-font;  
+  }
+
+  &__title {
+    font-size: $homepage-font;
+
+    @include breakpoint-up (large) {
+      font-size: revert;
+    }
+  }
+
+  &__toggle {
+    font-size: $homepage-font;
+
+    @include breakpoint-up (large) {
+      font-size: 1rem;
+    }
   }
 }
 
@@ -28,6 +41,10 @@ link {
 
 .country {
   font-size: $homepage-font;
+
+  h2 {
+    font-size: 1rem;
+  }
 
   &__description__text__b {
     font-weight: 600;

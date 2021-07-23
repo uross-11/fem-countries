@@ -14,6 +14,9 @@
   &-cl {
     margin: 0 54px;
     
+    @include breakpoint-down (small) {
+      margin: 0 45px;
+    }
   }
 
   &-c {
