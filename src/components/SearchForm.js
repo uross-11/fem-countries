@@ -23,7 +23,7 @@ const SearchForm = () => {
   }
 
   return (
-    <form className='form container-h' onSubmit={handleSubmit} action=''>
+    <form className='form container-h' onSubmit={handleSubmit}>
       <div className="form__container bs">
         <AiOutlineSearch className='form__searchicon' />
         <input
