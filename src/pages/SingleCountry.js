@@ -168,9 +168,10 @@ const SingleCountry = ({match}) => {
             <div className='singlecountry__borders__title'>Border Countries:</div>
             <div className='singlecountry__borders__buttons'>
               {borderCountries.map((item, index) => {
+                const param = item.replace(/\s+/g, '-').toLowerCase();
                 return (
                   <button key={index} className='singlecountry__borders__button'>
-                    <Link className='singlecountry__borders__button__link' to={`/${item}`}>{item}</Link>
+                    <Link className='singlecountry__borders__button__link' to={`/${param}`}>{item}</Link>
                   </button>
                 );
               })}
