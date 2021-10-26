@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect, useCallback, useReducer } from 'react';
 import reducer from './reducer';
 
-const url = 'https://restcountries.eu/rest/v2/';
+const url = 'https://restcountries.com/v2/';
 const AppContext = React.createContext();
 
 const initialState = {
@@ -31,6 +31,9 @@ const AppProvider = ({ children }) => {
       }
       if (region) {
         urlSearch = `${url}region/${region}`;
+      }
+      if (!searchTerm && !region) {
+        urlSearch = `${url}all/`;
       }
 
       const response = await fetch(urlSearch);

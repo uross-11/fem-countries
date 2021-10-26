@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Link , useParams } from 'react-router-dom';
-import { useGlobalContext } from '../context';
+/* import { useGlobalContext } from '../context'; */
 import { BsArrowLeft } from 'react-icons/bs';
 
 import Loading from '../components/Loading';
 
-const url = 'https://restcountries.eu/rest/v2/name/';
+const url = 'https://restcountries.com/v2/name/';
 
 const SingleCountry = ({match}) => {
 
@@ -15,7 +15,7 @@ const SingleCountry = ({match}) => {
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
 
-  const {codes} = useGlobalContext();
+/*   const {codes} = useGlobalContext(); */
   
   useEffect(() => {
     setLoading(true);
@@ -23,6 +23,7 @@ const SingleCountry = ({match}) => {
       try {
         const response = await fetch(`${url}${param}`);
         const data = await response.json();
+        console.log(data)
         if (data) {
           const {
             flag,
@@ -35,7 +36,7 @@ const SingleCountry = ({match}) => {
             topLevelDomain,
             languages,
             currencies,
-            borders
+            /* borders */ /* removed from API */
           } = data[0];
 
           const newCountry = {
@@ -49,7 +50,7 @@ const SingleCountry = ({match}) => {
             topLevelDomain,
             languages,
             currencies,
-            borders
+            /* borders */
           }
           setCountry(newCountry);
         } else {
@@ -62,7 +63,7 @@ const SingleCountry = ({match}) => {
       }
     }
     getCountry();
-  }, [id]);
+  }, [id, param]);
 
   if (loading) {
     return <Loading />
@@ -82,10 +83,10 @@ const SingleCountry = ({match}) => {
     topLevelDomain,
     currencies,
     languages,
-    borders
+    /* borders */
   } = country;
 
-  // Transform borders array from [FRA, ITA] to [France, Italy]
+/*   // Transform borders array from [FRA, ITA] to [France, Italy]
   var borderCountries = [];
   // Border codes
   const c = Object.values(codes);
@@ -96,7 +97,7 @@ const SingleCountry = ({match}) => {
         borderCountries.push(c[i].name);
       }
     }
-  }
+  } */
 
   return (
     <div className='singlecountry container-sc'>
@@ -164,7 +165,7 @@ const SingleCountry = ({match}) => {
             </div>
           </div>
 
-          <div className="singlecountry__borders">
+{/*           <div className="singlecountry__borders">
             <div className='singlecountry__borders__title'>Border Countries:</div>
             <div className='singlecountry__borders__buttons'>
               {borderCountries.map((item, index) => {
@@ -176,7 +177,7 @@ const SingleCountry = ({match}) => {
                 );
               })}
             </div>
-          </div>
+          </div> */}
 
         </div>
       </div>

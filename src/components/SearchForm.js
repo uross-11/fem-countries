@@ -46,8 +46,9 @@ const SearchForm = () => {
           ref={filterRegion}
           name="region"
           id="region"
+          value=""
         >
-          <option id="default" value="" selected disabled hidden>
+          <option id="default" value="" disabled hidden>
             Filter by Region
           </option>
           <option value="africa">Africa</option>
