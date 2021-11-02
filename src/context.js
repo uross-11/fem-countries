@@ -56,14 +56,14 @@ const AppProvider = ({ children }) => {
 
         const newCountries = data.map(item => {
           const {
-            flag,
+            flags,
             name,
             population,
             region,
             capital
           } = item;
           return {
-            thumbnail: flag,
+            thumbnail: flags,
             name: name,
             population: population,
             region: region,

@@ -23,10 +23,9 @@ const SingleCountry = ({match}) => {
       try {
         const response = await fetch(`${url}${param}`);
         const data = await response.json();
-        console.log(data)
         if (data) {
           const {
-            flag,
+            flags,
             name,
             nativeName,
             population,
@@ -40,7 +39,7 @@ const SingleCountry = ({match}) => {
           } = data[0];
 
           const newCountry = {
-            flag,
+            flags,
             name,
             nativeName,
             population,
@@ -73,7 +72,7 @@ const SingleCountry = ({match}) => {
   }
 
   const {
-    flag,
+    flags,
     name,
     nativeName,
     population,
@@ -111,7 +110,7 @@ const SingleCountry = ({match}) => {
       <div className="singlecountry__content">
 
         <div className="singlecountry__img">
-          <img src={flag} alt={name} />
+          <img src={flags.png} alt={name} />
         </div>
 
         <div className="singlecountry__info">

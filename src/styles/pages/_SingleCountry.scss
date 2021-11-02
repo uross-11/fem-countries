@@ -117,9 +117,19 @@
   &__img {
     img {
       width: 100%;
+      height: 229px;
+
+      @include breakpoint-up (medium) {
+        width: 320px;
+      }
+
+      @include breakpoint-up (large) {
+        width: 100%;
+      }
 
       @include breakpoint-up (xlarge) {
         width: 560px;
+        height: 400px;
       }
     }
   }
