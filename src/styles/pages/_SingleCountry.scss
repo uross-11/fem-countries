@@ -124,7 +124,7 @@
       }
 
       @include breakpoint-up (large) {
-        width: 100%;
+        width: 320px;
       }
 
       @include breakpoint-up (xlarge) {
