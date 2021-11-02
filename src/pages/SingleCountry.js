@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link , useParams } from 'react-router-dom';
-/* import { useGlobalContext } from '../context'; */
+import { useGlobalContext } from '../context';
 import { BsArrowLeft } from 'react-icons/bs';
 
 import Loading from '../components/Loading';
@@ -15,7 +15,7 @@ const SingleCountry = ({match}) => {
   const [loading, setLoading] = useState(false);
   const [country, setCountry] = useState(null);
 
-/*   const {codes} = useGlobalContext(); */
+  const {codes} = useGlobalContext();
   
   useEffect(() => {
     setLoading(true);
@@ -35,7 +35,7 @@ const SingleCountry = ({match}) => {
             topLevelDomain,
             languages,
             currencies,
-            /* borders */ /* removed from API */
+            borders
           } = data[0];
 
           const newCountry = {
@@ -49,7 +49,7 @@ const SingleCountry = ({match}) => {
             topLevelDomain,
             languages,
             currencies,
-            /* borders */
+            borders
           }
           setCountry(newCountry);
         } else {
@@ -82,10 +82,10 @@ const SingleCountry = ({match}) => {
     topLevelDomain,
     currencies,
     languages,
-    /* borders */
+    borders
   } = country;
 
-/*   // Transform borders array from [FRA, ITA] to [France, Italy]
+  // Transform borders array from [FRA, ITA] to [France, Italy]
   var borderCountries = [];
   // Border codes
   const c = Object.values(codes);
@@ -96,7 +96,7 @@ const SingleCountry = ({match}) => {
         borderCountries.push(c[i].name);
       }
     }
-  } */
+  }
 
   return (
     <div className='singlecountry container-sc'>
@@ -164,7 +164,7 @@ const SingleCountry = ({match}) => {
             </div>
           </div>
 
-{/*           <div className="singlecountry__borders">
+          <div className="singlecountry__borders">
             <div className='singlecountry__borders__title'>Border Countries:</div>
             <div className='singlecountry__borders__buttons'>
               {borderCountries.map((item, index) => {
@@ -176,7 +176,7 @@ const SingleCountry = ({match}) => {
                 );
               })}
             </div>
-          </div> */}
+          </div>
 
         </div>
       </div>
