@@ -38,7 +38,6 @@ const SearchForm = () => {
         />
       </div>
       <div className="form__container">
-        {/* Import react-select */}
         <label htmlFor="region"></label>
         <select
           className='form__select bs'
