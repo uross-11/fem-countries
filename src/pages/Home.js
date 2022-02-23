@@ -6,7 +6,7 @@ import CountriesList from '../components/CountriesList';
 const Home = () => {
 
   return (
-    <main>
+    <main className='container-maxwidth'>
       <SearchForm />
       <CountriesList />
     </main>

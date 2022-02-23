@@ -90,10 +90,13 @@ const SingleCountry = ({match}) => {
   // Border codes
   const c = Object.values(codes);
 
-  for (let i = 0; i < c.length; i++) {
-    for (let j = 0; j < borders.length; j++) {
-      if(c[i].code === borders[j]) {
-        borderCountries.push(c[i].name);
+  
+  if (borders) {
+    for (let i = 0; i < c.length; i++) {
+      for (let j = 0; j < borders.length; j++) {
+        if(c[i].code === borders[j]) {
+          borderCountries.push(c[i].name);
+        }
       }
     }
   }

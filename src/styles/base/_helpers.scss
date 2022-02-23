@@ -1,5 +1,10 @@
 .container {
 
+  &-maxwidth {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+
   // Header container
   &-h {
     margin: 0 16px;
