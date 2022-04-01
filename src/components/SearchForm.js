@@ -45,6 +45,7 @@ const SearchForm = () => {
           ref={filterRegion}
           name="region"
           id="region"
+          aria-label="region"
           value=""
         >
           <option id="default" value="" disabled hidden>
