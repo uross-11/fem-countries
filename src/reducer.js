@@ -1,7 +1,6 @@
 const reducer = (state, action) => {
   if (action.type === 'SET_MODE') {
     return {
-      /* ...state, */
       darkMode: !state.darkMode,
     }
   }

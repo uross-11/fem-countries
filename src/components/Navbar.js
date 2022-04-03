@@ -1,4 +1,3 @@
-import React from 'react';
 import { useGlobalContext } from '../context';
 import {RiMoonFill, RiSunFill} from 'react-icons/ri'
 

@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useGlobalContext } from '../context';
-import {AiOutlineSearch} from 'react-icons/ai';
-import {RiArrowDropDownLine} from 'react-icons/ri';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { RiArrowDropDownLine } from 'react-icons/ri';
 
 const SearchForm = () => {
   const {setSearchTerm, setRegion} = useGlobalContext();
